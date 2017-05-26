@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Vue Example 1</title>
 </head>
 <body>
-$END$
+    <div id="vue-app">
+        {{ message }}
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#vue-app',
+            data: function() {
+                return {
+                    message: 'Hello from Vue !'
+                }
+            }
+        });
+    </script>
 </body>
 </html>
