@@ -23,8 +23,8 @@
         </div>
 
         <ul>
-            <li v-for="item in items">
-                {{ item }}
+            <li v-for="(item, index) in items" v-on:click="removeClick(index)">
+                {{ index }}: {{ item }}
             </li>
         </ul>
     </div>
@@ -44,7 +44,11 @@
             methods: {
                 buttonClick: function() {
                     this.clickCounter++;
-                    this.items.push(Date.now());    // this will add new item to list, timestamp in milliseconds
+                    this.items.push(Date.now());
+                },
+                removeClick: function(index) {
+                    this.clickCounter--;
+                    this.items.splice(index, 1);
                 }
             }
         });
